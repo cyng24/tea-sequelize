@@ -5,8 +5,8 @@ const { createTeas } = require('../models/seed')
 // createTeas saves 5 different types of teas to the database
 
 describe('Tea Model', () => {
-  before(() => db.sync({ force: true }))
-  before('Creating test data...', createTeas)
+  before(() => db.sync())
+  before(console.log('Creating test data...'), createTeas)
   beforeEach(() => Tea.truncate())
 
   describe('Virtual: dollarPrice', () => {
